@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <%- include('./inc/head') %>
+</head>
+
+<body>
+      <%- include('./inc/nav.ejs') %> 
+<section>
+
+      <h2>İçerik Paylaşma Formu</h2>
+
+      <form action="/admin/add" method="POST">
+            <input type="text" name='title' placeholder='İçerik Başığı' required>
+            <input type="text" name='short' placeholder='Konu' required>
+            <textarea name="long" id="long" cols="30" rows="20" required></textarea>
+            <input type="submit" value='Oluştur' class='btn' style='margin-top:5px;'>         
+      </form>
+
+</section>
+
+</body>
+
+</html>

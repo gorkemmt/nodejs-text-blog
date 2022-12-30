@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <%- include('./inc/head.ejs')%>
+</head>
+<body>
+      
+    <%- include('./inc/nav.ejs') %>
+
+    <section>
+
+        <h1>Hoş geldiniz : <%= user.username %></h1>
+        <br></br>
+
+        <p>
+            <a href="/admin/add" id="btn">Yeni içerik oluşur</a> 
+        </p>
+
+            <ul>
+                <% blogs.forEach(myblog => { %>
+                    <li>
+                        <p><%=myblog.title  %> </p>   
+                        <a href="" class="del" data-doc="<%=myblog._id%>">Sil</a>     
+                    </li>
+                <% })  %>
+            </ul>
+
+    </section>
+
+    <script>
+        const del= document.querySelectorAll('a.del')
+        const del_links = [].slice.call(del)
+        
+        del_links.forEach((item,i)=>{
+            item.addEventListener('click',(e)=>{
+                const endpoint = `/admin/delete/${item.dataset.doc}`
+
+                fetch(endpoint, {
+                    method:'DELETE'
+                })
+
+                .then((response) => response.json())
+                .then((data) => window.location.href = data.link)
+                .catch((err)=> {
+                    console.log(err)
+                })
+
+            })
+
+        })
+
+    </script>
+
+
+</body>
+</html>
