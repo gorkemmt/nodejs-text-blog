@@ -2,6 +2,6 @@
 Nodejs kullanılarak oluşturuşmuş blog sitesi projesi
 
 # How to run
+- Veritabanı bağlantısı için mongodb bağlantı kodunu kopyalayıp .env klasörünüze ekleyin.
 - npm install
-- mongodb bağlantı komutunu ekleyin 
 - node app.js
