@@ -7,5 +7,3 @@ router.get('/',blogController.blog_index)
 router.get('/:id',blogController.blog_detail)
 
 module.exports = router
-
-
