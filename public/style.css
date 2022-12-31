@@ -30,13 +30,11 @@ nav ul li a {
       font-weight: 500;
 }
 
-
 nav ul li a:hover {
       background-color:#df4f4a;
       color:white;
       transition:all 0.4s ease-in-out;
 }
-
 
 section {
       max-width:800px;
@@ -54,8 +52,6 @@ form input {
       margin-bottom: .8rem;
       padding:.8rem .9rem;
 }
-
-
 
 #btn {
       padding:.5rem .4rem;
@@ -84,7 +80,6 @@ form input {
       color:white;
       background-color:#31e752;
 }
-
 
 #btn-green:hover {
       padding:.5rem .4rem;

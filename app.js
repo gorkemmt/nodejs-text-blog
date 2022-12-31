@@ -1,4 +1,5 @@
 const express= require('express')
+require('dotenv').config()
 
 const morgan = require('morgan')
 const mongoose = require('mongoose')
@@ -12,15 +13,13 @@ const {checkUser} = require('./middlewares/authMiddleware.js')
 const app = express()
 
 // Veritabanı işlemleri
-//const dbURL ='mongodb+srv://<root>:<root1234>@nodeblog.in0gt.mongodb.net/node-blog?retryWrites=true&w=majority'
-//const dbURL ='mongodb+srv://root:<root1234>@nodeblog.j0g5gpn.mongodb.net/node-blog?retryWrites=true&w=majority'
-const dbURL='mongodb://root:root1234@ac-mzpy93o-shard-00-00.j0g5gpn.mongodb.net:27017,ac-mzpy93o-shard-00-01.j0g5gpn.mongodb.net:27017,ac-mzpy93o-shard-00-02.j0g5gpn.mongodb.net:27017/?ssl=true&replicaSet=atlas-f95rvw-shard-0&authSource=admin&retryWrites=true&w=majority'
+
+const dbURL=process.env.MONGO_KEY
 mongoose.connect(dbURL, { useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true})
       .then((result)=> app.listen(3000))
       .catch((err)=> console.log(err))
 
 app.set('view engine','ejs')
-
 
 
 // Middleware kullanımı

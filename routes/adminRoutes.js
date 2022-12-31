@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const adminController = require('../controllers/adminController')
 
-
+//snake case
 router.get('/',adminController.admin_index)
 router.get('/add',adminController.admin_add)
 router.post('/add',adminController.admin_add_post)
